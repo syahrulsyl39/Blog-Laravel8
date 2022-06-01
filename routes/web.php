@@ -1,7 +1,10 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\DasboardController;
 use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\PenulisController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\TagsController;
 use App\Http\Controllers\UserController;
@@ -28,8 +31,24 @@ Route::get('/homedas', function () {
     return view('asset.home');
 });
 
+//dasboard
+Route::get('/das', [DasboardController::class, 'dasboard'])->name('dasboard');
+
+//route penulis
+Route::get('/indexpenulis', [PenulisController::class, 'penulis'])->name('index-penulis');
+Route::get('/tambahpenulis', [PenulisController::class, 'tambah_penulis'])->name('tambah-penulis');
+Route::post('/tambahpenulis', [PenulisController::class, 'tdatapenulis'])->name('data-penulis');
+
+
 //route frontend
-Route::get('/froindex', [FrontendController::class, 'index']);
+Route::get('/froindex', [FrontendController::class, 'index'])->name('index-frontend');
+Route::get('/contact', [FrontendController::class, 'contatc'])->name('contatc');
+Route::get('/detail/{id}', [FrontendController::class, 'detail'])->name('detail');
+
+
+//contact
+Route::get('/indexcontac', [ContactController::class, 'index'])->name('index-contact');
+Route::post('/tcontac', [ContactController::class, 'tambah_pesan'])->name('tambah-contact');
 
 // route category
 Route::middleware('auth', 'check:admin,user')->group(function(){

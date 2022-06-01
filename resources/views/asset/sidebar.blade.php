@@ -1,7 +1,7 @@
 <div class="main-sidebar">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="index.html">Admin Blog</a>
+            <a href="index.html">Data Admin Blog</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
             <a href="index.html">St</a>
@@ -9,11 +9,8 @@
         <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
             <li class="nav-item dropdown">
-                <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Dashboard</span></a>
-                <ul class="dropdown-menu">
-                    <li><a class="nav-link" href="index-0.html">General Dashboard</a></li>
-                    <li><a class="nav-link" href="index.html">Ecommerce Dashboard</a></li>
-                </ul>
+                <a href="{{ route('home') }}" class="nav-link"><i class="fas fa-fire"></i>Dashboard</a>
+
             </li>
             <li class="menu-header">Starter</li>
             <li class="nav-item dropdown">
@@ -44,6 +41,20 @@
                     <span>User</span></a>
                 <ul class="dropdown-menu">
                     <li><a class="nav-link" href="{{ route('index-user') }}">List User</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
+                    <span>Pesan</span></a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link" href="{{ route('index-contact') }}">List Pesan</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
+                    <span>Penulis</span></a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link" href="{{ route('index-penulis') }}">List Penilis</a></li>
                 </ul>
             </li>
 

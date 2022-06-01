@@ -1289,7 +1289,7 @@ h5,
     -webkit-box-flex: 0;
     -ms-flex: 0 0 50px;
     flex: 0 0 50px;
-    border-radius: 50%;
+    border-radius: 15px;
 }
 .testimonial-2 .author-name {
     line-height: 1.3;

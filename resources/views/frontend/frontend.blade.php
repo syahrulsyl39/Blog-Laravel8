@@ -44,7 +44,7 @@
 
                     <div class="col-3">
                         <div class="site-logo">
-                            <a href="index.html"><strong>Blog News</strong></a>
+                            <a href="#"><strong>Blog News</strong></a>
                         </div>
                     </div>
 
@@ -56,11 +56,11 @@
 
                         <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
                             <ul class="site-menu main-menu js-clone-nav ml-auto ">
-                                <li class="active"><a href="index.html" class="nav-link">Home</a></li>
-                                <li><a href="blog.html" class="nav-link">Berita Terbaru</a></li>
-                                <li><a href="testimonials.html" class="nav-link">Program</a></li>
-                                <li><a href="tutorials.html" class="nav-link">Tentang Kami</a></li>
-                                <li><a href="about.html" class="nav-link">Hubungi Kami</a></li>
+                                <li class="active"><a href="#" class="nav-link">Home</a></li>
+                                <li><a href="#berita" class="nav-link">Berita Terbaru</a></li>
+                                <li><a href="#category" class="nav-link">Category</a></li>
+                                <li><a href="#tentang" class="nav-link">Tentang Kami</a></li>
+                                <li><a href="#contact-section" class="nav-link">Hubungi Kami</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -77,8 +77,9 @@
 
             <div class="container">
                 <div class="row align-items-center justify-content-center">
-                    <div class="col-lg-10 text-center">
+                    <div class="col-lg-10 text-center mt-lg-4">
                         <h1>Informasi <strong>Terbaik</strong> Saat <strong>Ini</strong></h1>
+
                         <div class="col-lg-7 mb-4 mb-lg-0 m-auto">
                             <form action="#" class="d-flex search-form">
                                 <span class="icon-"></span>
@@ -91,19 +92,26 @@
             </div>
         </div>
 
+
+
         <div class="site-section bg-light pb-0">
             <div class="container">
                 <div class="row align-items-stretch overlap">
+
+
                     <div class="col-lg-8">
                         <div class="box h-100">
-                            <div class="d-flex align-items-center">
+                            <div class="d-flex align-items-md-start">
                                 <div class="img"><img src="{{ asset('frontend/images/img_1.jpg') }}"
                                         class="img-fluid" alt="Image"></div>
                                 <div class="text">
-                                    <h3><a href="#">Berita Terpanas</a></h3>
-                                    <a href="#" class="category">Tutorial</a>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum quidem totam
-                                        exercitationem eveniet blanditiis nulla, et possimus, itaque alias maxime!</p>
+                                    <h3><a href="#">Berita Terpopuler</a></h3>
+                                    <a href="#" class="category">One Piece</a>
+                                    <p>One Piece adalah sebuah seri manga Jepang yang ditulis dan diilustrasikan oleh
+                                        Eiichiro Oda. Manga ini telah dimuat di majalah Weekly Shōnen Jump milik
+                                        Shueisha sejak tanggal 22 Juli 1997, dan telah dibundel menjadi 91 volume
+                                        tankōbon.
+                                    </p>
                                     <p class="mb-0">
                                         <span class="brand-react h5"></span>
                                         <span class="brand-javascript h5"></span>
@@ -111,38 +119,29 @@
                                     <p class="meta">
                                         <span class="mr-2 mb-2">1hr 24m</span>
                                         <span class="mr-2 mb-2">Advanced</span>
-                                        <span class="mr-2 mb-2">Jun 18, 2020</span>
+                                        <span class="mr-2 mb-2">Jun 18, 2022</span>
                                     </p>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+
+
                     <div class="col-lg-4">
                         <div class="box small h-100">
-                            <div class="d-flex align-items-center mb-2">
-                                <div class="img"><img src="{{ asset('frontend/images/img_2.jpg') }}"
-                                        class="img-fluid" alt="Image"></div>
-                                <div class="text">
-                                    <a href="#" class="category">Tutorial</a>
-                                    <h3><a href="#">Learning React Native</a></h3>
+                            <div class="d-flex align-items-center mb-2" id="category">
+                                <div class="ml-3 ">
+                                    <h3 class="">List Category</h3>
+                                    @foreach ($data_category as $category)
+                                        <ul class="list-unstyled">
+                                            <li><a href="#">{{ $category->nama }}</a></li>
+
+                                        </ul>
+                                    @endforeach
                                 </div>
                             </div>
-                            <div class="d-flex align-items-center mb-2">
-                                <div class="img"><img src="{{ asset('frontend/images/img_3.jpg') }}"
-                                        class="img-fluid" alt="Image"></div>
-                                <div class="text">
-                                    <a href="#" class="category">Tutorial</a>
-                                    <h3><a href="#">Learning React Native</a></h3>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <div class="img"><img src="{{ asset('frontend/images/img_4.jpg') }}"
-                                        class="img-fluid" alt="Image"></div>
-                                <div class="text">
-                                    <a href="#" class="category">Tutorial</a>
-                                    <h3><a href="#">Learning React Native</a></h3>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -226,62 +225,44 @@
                 <div class="row">
                     <div class="col-12 text-center mb-3">
                         <div class="heading mb-4">
-                            <span class="caption">Berita</span>
-                            <h2>Terpopuler</h2>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="d-flex tutorial-item mb-4">
-                            <div class="img-wrap">
-                                <a href="#"><img src="{{ asset('frontend/images/img_1.jpg') }}" alt="Image"
-                                        class="img-fluid"></a>
-                            </div>
-                            <div>
-                                <h3><a href="#">Learning React Native</a></h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam tempore, saepe numquam.
-                                    Doloremque culpa tenetur facere quisquam, animi illum possimus!</p>
-
-                                <p class="mb-0">
-                                    <span class="brand-react h5"></span>
-                                    <span class="brand-javascript h5"></span>
-                                </p>
-                                <p class="meta">
-                                    <span class="mr-2 mb-2">1hr 24m</span>
-                                    <span class="mr-2 mb-2">Advanced</span>
-                                    <span class="mr-2 mb-2">Jun 18, 2020</span>
-                                </p>
-
-                                <p><a href="tutorial-single.html" class="btn btn-primary custom-btn">View</a></p>
-                            </div>
+                            <span class="caption" id="berita">Berita</span>
+                            <h2>Terbaru</h2>
                         </div>
                     </div>
 
+                    @foreach ($data_post as $data)
+                        <div class="col-lg-6">
+                            <div class="d-flex tutorial-item mb-4">
+                                <div class="img-wrap">
+                                    <a href="#"><img src="{{ asset('storage/' . $data->gambar) }}" alt="Image"
+                                            class="img-fluid"></a>
+                                </div>
+                                <div>
 
-                    <div class="col-lg-6">
-                        <div class="d-flex tutorial-item mb-4">
-                            <div class="img-wrap">
-                                <a href="#"><img src="{{ asset('frontend/images/img_1.jpg') }}" alt="Image"
-                                        class="img-fluid"></a>
-                            </div>
-                            <div>
-                                <h3><a href="#">Learning React Native</a></h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam tempore, saepe numquam.
-                                    Doloremque culpa tenetur facere quisquam, animi illum possimus!</p>
+                                    <h3><a href="#">{{ $data->judul }}</a></h3>
 
-                                <p class="mb-0">
-                                    <span class="brand-react h5"></span>
-                                    <span class="brand-javascript h5"></span>
-                                </p>
-                                <p class="meta">
-                                    <span class="mr-2 mb-2">1hr 24m</span>
-                                    <span class="mr-2 mb-2">Advanced</span>
-                                    <span class="mr-2 mb-2">Jun 18, 2020</span>
-                                </p>
+                                    <p>{{ $data->content }}</p>
 
-                                <p><a href="tutorial-single.html" class="btn btn-primary custom-btn">View</a></p>
+                                    <p class="mb-0">
+                                        <span class="brand-react h5"></span>
+                                        <span class="brand-javascript h5"></span>
+                                    </p>
+                                    <a href="#" class="category">{{ $data->category->nama }}</a>
+                                    <p class="meta">
+                                        <span class="mr-2 mb-2">{{ $data->users->name }} : </span>
+                                        <span class="mr-2 mb-2">{{ $data->created_at->diffforhumans() }}</span>
+                                    </p>
+
+
+
+                                    <p><a href="{{ route('detail', $data->id) }}"
+                                            class="btn btn-primary custom-btn">View</a></p>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    @endforeach
+
+
                 </div>
             </div>
         </div>
@@ -292,81 +273,98 @@
                     <div class="col-lg-7 text-center mb-5">
                         <div class="heading">
                             <span class="caption">Biodata</span>
-                            <h2>Para Penulis</h2>
+                            <h2>Anggota</h2>
                         </div>
                     </div>
                 </div>
+                <div class="row ">
+                    @foreach ($data_penulis as $penulis)
+                        <div class="col-lg-4 mb-4 mb-lg-0">
+                            <div class="testimonial-2">
+                                <h3 class="h5">{{ $penulis->jabatan }}</h3>
+                                <div>
+                                    <span class="icon-star text-warning"></span>
+                                    <span class="icon-star text-warning"></span>
+                                    <span class="icon-star text-warning"></span>
+                                    <span class="icon-star text-warning"></span>
+                                    <span class="icon-star-o text-warning"></span>
+                                </div>
+                                <blockquote class="mb-4">
+                                    <p>{{ $penulis->biografi }}</p>
+                                </blockquote>
+                                <div class="d-flex v-card align-items-center">
+                                    <img src="{{ asset('storage/' . $penulis->gambar) }}" alt="Image"
+                                        class="img-fluid mr-3">
+                                    <div class="author-name">
+                                        <span class="d-block">{{ $penulis->penulis }}</span>
+                                        <span>{{ $penulis->jabatan }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="site-section bg-light" id="contact-section">
+            <div class="container">
+
                 <div class="row">
-                    <div class="col-lg-4 mb-4 mb-lg-0">
-                        <div class="testimonial-2">
-                            <h3 class="h5">Excellent Teacher!</h3>
-                            <div>
-                                <span class="icon-star text-warning"></span>
-                                <span class="icon-star text-warning"></span>
-                                <span class="icon-star text-warning"></span>
-                                <span class="icon-star text-warning"></span>
-                                <span class="icon-star-o text-warning"></span>
-                            </div>
-                            <blockquote class="mb-4">
-                                <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, deserunt
-                                    eveniet veniam. Ipsam, nam, voluptatum"</p>
-                            </blockquote>
-                            <div class="d-flex v-card align-items-center">
-                                <img src="{{ asset('frontend/images/person_1.jpg') }}" alt="Image"
-                                    class="img-fluid mr-3">
-                                <div class="author-name">
-                                    <span class="d-block">Mike Fisher</span>
-                                    <span>Owner, Ford</span>
+                    <div class="col-lg-8 mb-5">
+
+                        <form action="{{ route('tambah-contact') }}" method="post">
+                            @csrf
+                            <div class="form-group row">
+                                <div class="col-md-6 mb-4 mb-lg-0">
+                                    <input type="text" class="form-control" placeholder="Nama depam"
+                                        name="nama_depan">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Nama belakang"
+                                        name="nama_belakang">
                                 </div>
                             </div>
-                        </div>
+
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" placeholder="Email" name="email">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <textarea name="pesan" id="" class="form-control" placeholder="Masukkan pesan anda disini." cols="30"
+                                        rows="10"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-12 mr-auto">
+                                    <button class="btn btn-primary btn-block" type="submit">Simpan Pesan</button>
+                                </div>
+
+                            </div>
+                        </form>
+
+
                     </div>
-                    <div class="col-lg-4 mb-4 mb-lg-0">
-                        <div class="testimonial-2">
-                            <h3 class="h5">Best Video Tutorial!</h3>
-                            <div>
-                                <span class="icon-star text-warning"></span>
-                                <span class="icon-star text-warning"></span>
-                                <span class="icon-star text-warning"></span>
-                                <span class="icon-star text-warning"></span>
-                                <span class="icon-star-o text-warning"></span>
-                            </div>
-                            <blockquote class="mb-4">
-                                <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, deserunt
-                                    eveniet veniam. Ipsam, nam, voluptatum"</p>
-                            </blockquote>
-                            <div class="d-flex v-card align-items-center">
-                                <img src="{{ asset('frontend/images/person_2.jpg') }}" alt="Image"
-                                    class="img-fluid mr-3">
-                                <div class="author-name">
-                                    <span class="d-block">Jean Stanley</span>
-                                    <span>Traveler</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mb-4 mb-lg-0">
-                        <div class="testimonial-2">
-                            <h3 class="h5">Easy to Understand!</h3>
-                            <div>
-                                <span class="icon-star text-warning"></span>
-                                <span class="icon-star text-warning"></span>
-                                <span class="icon-star text-warning"></span>
-                                <span class="icon-star text-warning"></span>
-                                <span class="icon-star-o text-warning"></span>
-                            </div>
-                            <blockquote class="mb-4">
-                                <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, deserunt
-                                    eveniet veniam. Ipsam, nam, voluptatum"</p>
-                            </blockquote>
-                            <div class="d-flex v-card align-items-center">
-                                <img src="{{ asset('frontend/images/person_3.jpg') }}" alt="Image"
-                                    class="img-fluid mr-3">
-                                <div class="author-name">
-                                    <span class="d-block">Katie Rose</span>
-                                    <span>Customer</span>
-                                </div>
-                            </div>
+                    <div class="col-lg-4 ml-auto">
+                        <div class="bg-white p-3 p-md-5">
+                            <h3 class="text-black mb-4">Hubungi Kami</h3>
+                            <ul class="list-unstyled footer-link">
+                                <li class="d-block mb-3">
+                                    <span class="d-block text-black">Alamat:</span>
+                                    <span>Jl Abdul DG Sirua, Makassar Indonesia</span>
+                                </li>
+                                <li class="d-block mb-3"><span class="d-block text-black">Phone:</span><span>0822
+                                        92209848</span></li>
+                                <li class="d-block mb-3"><span
+                                        class="d-block text-black">Email:</span><span>Blognews@gmail.com</span>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -376,70 +374,30 @@
 
         <footer class="site-footer">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-3">
-                        <h2 class="footer-heading mb-4">About Us</h2>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                            there live the blind texts. </p>
-                        <ul class="list-unstyled social">
-                            <li><a href="#"><span class="icon-facebook"></span></a></li>
-                            <li><a href="#"><span class="icon-instagram"></span></a></li>
-                            <li><a href="#"><span class="icon-twitter"></span></a></li>
-                            <li><a href="#"><span class="icon-linkedin"></span></a></li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-8 ml-auto">
-                        <div class="row">
-                            <div class="col-lg-3">
-                                <h2 class="footer-heading mb-4">Quick Links</h2>
-                                <ul class="list-unstyled">
-                                    <li><a href="#">About Us</a></li>
-                                    <li><a href="#">Testimonials</a></li>
-                                    <li><a href="#">Terms of Service</a></li>
-                                    <li><a href="#">Privacy</a></li>
-                                    <li><a href="#">Contact Us</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-3">
-                                <h2 class="footer-heading mb-4">Resources</h2>
-                                <ul class="list-unstyled">
-                                    <li><a href="#">About Us</a></li>
-                                    <li><a href="#">Testimonials</a></li>
-                                    <li><a href="#">Terms of Service</a></li>
-                                    <li><a href="#">Privacy</a></li>
-                                    <li><a href="#">Contact Us</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-3">
-                                <h2 class="footer-heading mb-4">Support</h2>
-                                <ul class="list-unstyled">
-                                    <li><a href="#">About Us</a></li>
-                                    <li><a href="#">Testimonials</a></li>
-                                    <li><a href="#">Terms of Service</a></li>
-                                    <li><a href="#">Privacy</a></li>
-                                    <li><a href="#">Contact Us</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-3">
-                                <h2 class="footer-heading mb-4">Company</h2>
-                                <ul class="list-unstyled">
-                                    <li><a href="#">About Us</a></li>
-                                    <li><a href="#">Testimonials</a></li>
-                                    <li><a href="#">Terms of Service</a></li>
-                                    <li><a href="#">Privacy</a></li>
-                                    <li><a href="#">Contact Us</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+
+                <div class="heading text-center m-auto">
+
+                    <h2 id="tentang">Tentang Kami</h2>
                 </div>
+                <p class="text-center row-8">Kami adalah salah satu penyedia layanan terbaik & ini akan membantu
+                    Anda
+                    mencari berita
+                    terupdate
+                    yang bagus dengan cara termudah dan ini adalah salah satu cara terbaik dan tepat untuk yang
+                    sesuai untuk Anda.</p>
+
+
+
                 <div class="row pt-5 mt-5 text-center">
                     <div class="col-md-12">
-                        <div class="border-top pt-5">
-                            <p>
-
-                                Copyright &copy; 2022 <a href="">Syahrul Saleh</a>
-
+                        <div class="border-top pt-5 text-center">
+                            <p>Copyright &copy; 2022 <a href="">Blog News</a>
+                            <ul class="list-unstyled social text-center">
+                                <li><a href="#"><span class="icon-facebook"></span></a></li>
+                                <li><a href="#"><span class="icon-instagram"></span></a></li>
+                                <li><a href="#"><span class="icon-twitter"></span></a></li>
+                                <li><a href="#"><span class="icon-linkedin"></span></a></li>
+                            </ul>
 
                             </p>
                         </div>

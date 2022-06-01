@@ -13,7 +13,7 @@ class TagsController extends Controller
 {
     public function index()
     {
-        $data_tags = Tags::paginate(2);
+        $data_tags = Tags::paginate(6);
         return view('admin.tags.index', compact('data_tags'));
     }
 

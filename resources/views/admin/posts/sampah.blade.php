@@ -20,7 +20,7 @@
                 <tr>
                     <td>{{ $posts + $data_posts->firstitem() }}</td>
                     <td>{{ $post->judul }}</td>
-                    <td>{{ $post->category->nama }}</td>
+                    <td>{{ $post->category->nama ?? 'none' }}</td>
                     <td>{{ $post->content }}</td>
                     <td>
 

@@ -20,7 +20,8 @@ class PostsController extends Controller
     {
         $data_posts = Posts::paginate(3);
         $users = User::all();
-        return view('admin.posts.indexp', compact('data_posts', 'users'));
+        $category = Category::all();
+        return view('admin.posts.indexp', compact('data_posts', 'users', 'category'));
     }
 
     public function tambah_post()
@@ -68,6 +69,10 @@ class PostsController extends Controller
                 Storage::delete('public/', $post->gambar);
                 $file = $request->file('gambar')->store('imgp');
             }
+        }
+
+        if ($request->file('gambar') == null) {
+            $file = $post->gambar;
         }
 
         

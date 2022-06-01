@@ -2,6 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Contact;
+use App\Models\penulis;
+use App\Models\Posts;
+use App\Models\Tags;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +29,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $tampil_posts = Posts::all()->count();
+        $tampil_category = Category::all()->count();
+        $tampil_tags = Tags::all()->count();
+        $tampil_user = User::all()->count();
+        $tampil_pesan = Contact::all()->count();
+        $tampil_penulis = penulis::all()->count();
+
+        return view('admin.dasboard.dasbiard', compact('tampil_posts', 'tampil_category', 'tampil_tags', 'tampil_user', 'tampil_pesan', 'tampil_penulis'));
     }
 }
